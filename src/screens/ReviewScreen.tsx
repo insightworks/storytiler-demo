@@ -2,7 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { agentsFor, dependencyNotes, milestonesFor, phasesFor, reviewSummary } from '../content'
 import { useApp } from '../store'
 import type { Person } from '../types'
-import { AiBadge, Mark, Portrait } from '../ui'
+import { AiBadge, Portrait } from '../ui'
 import { cn } from '../format'
 
 export function ReviewScreen() {
@@ -28,8 +28,6 @@ export function ReviewScreen() {
   return (
     <main className="review-shell">
       <header className="brief-top">
-        <Mark />
-        <strong>storytiler</strong>
         <span>Granska team och plan</span>
         <button type="button" className="quiet-link" onClick={backToBrief}>
           Tillbaka till briefen

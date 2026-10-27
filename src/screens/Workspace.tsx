@@ -3,7 +3,7 @@ import { agentsFor, documentCount, findPerson, myTasks, nowLine, searchHits } fr
 import { formatShort, statusLabel, cn } from '../format'
 import { useApp } from '../store'
 import type { Person } from '../types'
-import { AiBadge, IconSearch, Mark, Portrait } from '../ui'
+import { AiBadge, IconSearch, Portrait } from '../ui'
 import { ChatPane } from './ChatPane'
 import { ActivitiesPane, ActivityDetail, BriefPane, OverviewPane, SettingsPane, TasksPane, TeamPane } from './Panes'
 
@@ -36,8 +36,7 @@ export function Workspace() {
     <div className="app-shell" data-testid="workspace">
       <aside className="rail">
         <div className="brand">
-          <Mark />
-          <strong>storytiler</strong>
+          <strong>storytiler<span className="brand-dot">.</span></strong>
         </div>
         <div className="search-wrap">
           <IconSearch />
@@ -314,7 +313,9 @@ function AgentCard({
       ) : (
         <div className="agent-side">
           <p className="eyebrow">Din projektagent</p>
-          <Portrait look={person.look} name={person.name} size={76} />
+          <div className="portrait-frame">
+            <Portrait look={person.look} name={person.name} size={132} />
+          </div>
           <h2>
             {person.name} {person.kind === 'agent' && <AiBadge />}
           </h2>
@@ -324,7 +325,13 @@ function AgentCard({
           <p className="role-line">
             {person.role} · {project.name}
           </p>
-          {person.skills.length > 0 && <p className="skill-line">{person.skills.join(' · ')}</p>}
+          {person.skills.length > 0 && (
+            <ul className="skills">
+              {person.skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          )}
           <button type="button" className="call" data-testid="call" onClick={onCall}>
             Ring {person.name.split(' ')[0]}
           </button>

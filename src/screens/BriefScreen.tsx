@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { BriefDoc } from '../BriefDoc'
 import { leadFor } from '../content'
 import { useApp } from '../store'
-import { AiBadge, IconSend, Mark, Portrait } from '../ui'
+import { AiBadge, IconSend, Portrait } from '../ui'
 
 export function BriefScreen() {
   const { state, sendBrief, editName, editItemText, confirmFact, removeFact, approveBrief, backToProject } = useApp()
@@ -28,8 +28,6 @@ export function BriefScreen() {
   return (
     <main className="brief-shell">
       <header className="brief-top">
-        <Mark />
-        <strong>storytiler</strong>
         <span>Brief</span>
         {state.project && (
           <button type="button" className="quiet-link" onClick={backToProject}>

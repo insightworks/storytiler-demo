@@ -1,24 +1,21 @@
 import { cn } from './format'
 
 const PALETTE: Record<string, { bg: string; skin: string; hair: string; shirt: string; style: 'short' | 'long' | 'bob' | 'crop' }> = {
-  fredrik: { bg: '#d9d4cc', skin: '#e2b08a', hair: '#3a2e28', shirt: '#2f3438', style: 'short' },
-  nora: { bg: '#f3d5cc', skin: '#f0c2a4', hair: '#2b211c', shirt: '#e24b3b', style: 'long' },
-  elias: { bg: '#d5e0da', skin: '#e4b896', hair: '#1c2428', shirt: '#2f4f4a', style: 'crop' },
-  saga: { bg: '#f0e2cc', skin: '#edc3a4', hair: '#6a3a1e', shirt: '#c46b3a', style: 'bob' },
-  amir: { bg: '#ddd9ee', skin: '#c9926a', hair: '#1a1714', shirt: '#3d4a88', style: 'short' },
+  fredrik: { bg: '#e5eedc', skin: '#e2b08a', hair: '#3a2e28', shirt: '#4d6737', style: 'short' },
+  nora: { bg: '#eae4fa', skin: '#f0c2a4', hair: '#2b211c', shirt: '#6554c0', style: 'long' },
+  elias: { bg: '#def0f7', skin: '#e4b896', hair: '#1c2428', shirt: '#255c73', style: 'crop' },
+  saga: { bg: '#fbe3d6', skin: '#edc3a4', hair: '#6a3a1e', shirt: '#8a4c2e', style: 'bob' },
+  amir: { bg: '#e5eedc', skin: '#c9926a', hair: '#1a1714', shirt: '#4d6737', style: 'short' },
   liv: { bg: '#f0e0f2', skin: '#f0c8b4', hair: '#241818', shirt: '#7a3e6d', style: 'bob' },
-  noel: { bg: '#d7e4ec', skin: '#e8c4a4', hair: '#2c261c', shirt: '#24566b', style: 'crop' },
-  human: { bg: '#e7e1da', skin: '#e6c2a2', hair: '#3d342c', shirt: '#8d6b5a', style: 'short' },
+  noel: { bg: '#def0f7', skin: '#e8c4a4', hair: '#2c261c', shirt: '#255c73', style: 'crop' },
+  human: { bg: '#e5eedc', skin: '#e6c2a2', hair: '#3d342c', shirt: '#4d6737', style: 'short' },
 }
 
-export function Mark({ size = 28 }: { size?: number }) {
+export function Mark({ size = 33 }: { size?: number }) {
   return (
-    <svg className="mark" width={size} height={size} viewBox="0 0 32 32" aria-hidden="true">
-      <rect width="32" height="32" rx="8" fill="#1c1917" />
-      <rect x="7" y="18" width="4.2" height="7" rx="1" fill="#f4f1ec" />
-      <rect x="13.9" y="13" width="4.2" height="12" rx="1" fill="#f4f1ec" />
-      <rect x="20.8" y="8" width="4.2" height="17" rx="1" fill="#f4f1ec" />
-    </svg>
+    <span className="mark-letter" style={{ width: size, height: size, fontSize: Math.round(size * 0.72) }} aria-hidden="true">
+      f
+    </span>
   )
 }
 

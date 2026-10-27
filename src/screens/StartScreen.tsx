@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { SEED } from '../content'
 import { useApp } from '../store'
-import { IconSend, Mark } from '../ui'
+import { IconSend } from '../ui'
 
 const EXAMPLES = ['Skapa en dashboard.', 'Planera en lansering.', 'Utveckla en ny tjänst.']
 
@@ -18,7 +18,7 @@ export function StartScreen() {
   return (
     <main className="stage">
       <div className="stage-inner">
-        <Mark size={36} />
+        <p className="eyebrow">Människor + AI · Ett gemensamt projekt</p>
         <h1>Vad vill du åstadkomma?</h1>
         <form
           className="start-field"
